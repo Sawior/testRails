@@ -7,9 +7,18 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Gilda+Display|Skranji|Amatic+SC&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+	<script>
+  $(function() {
+    $( "#dialog" ).dialog();
+  });
+  </script>
 </head>
 <body>
 <!-- top -->
+<div class='grey'>
 <div class='top'>
 	<!-- social -->
     <div class='social'>
@@ -67,7 +76,7 @@
 			Vi: Lubię PDFy <br />
 			Vi: Lubię PDFy <br />
 			Vi: Lubię PDFy <br />
-		</div>
+			</div>
 		<div class='login'>
 			<% if user_signed_in? %>
 				<div class='text_title'>Panel admina</div>
@@ -91,6 +100,6 @@
 <!-- bottom -->
 <div>
 </div>
-
+</div>
 </body>
 </html>
