@@ -7,12 +7,13 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Gilda+Display|Skranji|Amatic+SC&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <%= stylesheet_link_tag "jss.css" %>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 	<script>
   $(function() {
-    $( "#dialog" ).dialog();
+    $( "#dialog" ).dialog({ minWidth: 590 });
   });
   </script>
 </head>
