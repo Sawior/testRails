@@ -41,6 +41,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    # druga wersja http://stackoverflow.com/questions/4350499/adding-variable-to-params-in-rails
+    # @post= Post.new(params[:page].merge(:user_id => 1, :foo => "bar"))
     @post = Post.new(params[:post])
 
     respond_to do |format|
