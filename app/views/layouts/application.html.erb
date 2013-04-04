@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Strona zespołu projektowego</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Gilda+Display|Skranji|Amatic+SC&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!-- top -->
+<div class='top'>
+	<!-- social -->
+    <div class='social'>
+    	<%= image_tag("fb.jpg", :alt => "My na Fejsie") %>
+    	<%= image_tag("github.jpg", :alt => "Kod - Github") %>
+    	<%= image_tag("tweet.jpg", :alt => "O nas na tweeterze") %>
+    	<%= image_tag("yt.jpg", :alt => "Filmiki") %>
+    </div>
+    
+    <!-- login -->
+  <div class='user_nav'>
+    	<% if user_signed_in? %>
+  			Zalogowany jako <%= current_user.email %>. To nie Ty?
+			<%= link_to "Wyloguj", destroy_user_session_path  , :method =>:delete %> 
+		<% else %>
+			<%= link_to "Zarejestruj", new_user_registration_path %> lub <%=link_to "Zaloguj", new_user_session_path %>
+		<% end %>
+   </div>
+    
+    
+    <!-- search -->
+  <div class='search'>
+    	Szukaj: 
+  </div>
+</div>
+
+<!-- navigation -->
+<div class="title">
+	<!-- real title -->
+    <div class='site_name'>
+    Strona szalonego zespołu projektowego
+    </div>
+
+	<!-- menu -->
+    <div class='menu'>
+    	<div class='user1_button'>Wika</div>
+        <div class='user2_button'>Krzysiek</div>
+        <div class='user3_button'>Piotrek</div>
+        <div class='about_button'>about</div>
+    </div>
+</div>
+
+<!-- top sub navi -->
+<div class='top-sub-navi'>      
+        <!-- what news -->
+        <div class='new-articles'>
+        	<div class="text_title">News</div>
+            Tu będą posty jak się uda naprawić błąd....
+        </div>
+    	<!-- shoutbox -->
+		<div class="shoutbox">
+        	<div class="text_title">ShoutBox</div>
+        <br />
+			Vi: Lubię PDFy <br />
+			Vi: Lubię PDFy <br />
+			Vi: Lubię PDFy <br />
+			Vi: Lubię PDFy <br />
+		</div>
+		<div class='login'>
+			<% if user_signed_in? %>
+				<div class='text_title'>Panel admina</div>
+    			<%= yield :nowyPost %>
+    			<%= link_to "Nowy post", new_post_path %>
+    		<% else %>
+    			<%= yield :sidebar %>
+    		<% end %>
+    		
+    	</div>
+    </div>
+
+<!-- main ncontainer -->
+<div class='main'>
+	<!-- context -->
+    <div class='context'>
+    <%= yield %>
+    </div>
+</div>
+
+<!-- bottom -->
+<div>
+</div>
+
+</body>
+</html>
