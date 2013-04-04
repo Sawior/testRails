@@ -3,9 +3,9 @@
 	
 	<%= @post.text %>
 	<h4>Autor</h4>
-	<%= @post.user_id %>
+	<%= @post.author %>
 	<h4 align="left">Komentarze</h4>
-	<%= image_tag @post.image_url %>
+	<%= image_tag @post.image %>
 	
 
 	<% @post.comments.each do |comment| %>
