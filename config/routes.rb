@@ -1,11 +1,9 @@
 BlogYT::Application.routes.draw do
 root :to =>'posts#index'
   devise_for :users
-<<<<<<< HEAD
+
   resources :users
-=======
-  resources :users, :only => [:show]
->>>>>>> 42b962d644ce464101163cae6b6ab70fb523e72d
+
  
 
   get "comments/create"
