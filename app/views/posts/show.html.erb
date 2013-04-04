@@ -1,9 +1,10 @@
 <div class='post'>
 <div class='text_title'><%= @post.title %></div>
 	
-	<%= @post.text %>
-	<h4>Autor</h4>
-	<%= @post.author %>
+	<%= @post.text.html_safe %>
+	<div class='post_fotter'>
+			Dodano przez: <b><%= @post.user.email %></b>, <%= time_ago_in_words @post.created_at  %> temu.
+		</div>
 	<h4 align="left">Komentarze</h4>
 	<%= image_tag @post.image %>
 	

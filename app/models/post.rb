@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :text, :title, :image, :user
+  attr_accessible :text, :title, :image, :user_id
 has_many :comments
 belongs_to :user
 mount_uploader :image, ImageUploader
