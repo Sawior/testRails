@@ -1,8 +1,19 @@
-<<<<<<< HEAD
 
-	<%= @user.email %>
+<h1 align="middle"> Wpisy<br /> <%= @user.email %></h1>
+
+<% @user.posts.each do |post| %>
+	<div class='post'>
+		<div class='text_title'>
+			<%= link_to post.title, post %>
+			</div>
+		<div>
+			<%= post.text.html_safe %>
+		</div>
+		<div class='post_fotter'>
+			Dodano przez: <b><%= post.user.email %></b>, <%= time_ago_in_words post.created_at  %> temu.
+		</div>	
+	</div>
+<% end %>
+
 	
-=======
-<%= @user.email %>
-<%= @user.email %>
->>>>>>> 42b962d644ce464101163cae6b6ab70fb523e72d
+	

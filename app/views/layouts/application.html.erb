@@ -55,9 +55,15 @@
 
 	<!-- menu -->
     <div class='menu'>
-    	<div class='user1_button'>Wika</div>
-        <div class='user2_button'>Krzysiek</div>
-        <div class='user3_button'>Piotrek</div>
+    	<div class='user1_button'>
+    	
+<%= link_to "Wika", user_path(4)%></div>
+     <div class='user2_button'>
+     	<%= link_to "Krzysiek", user_path(1)%>
+</div>
+        <div class='user3_button'>
+<%= link_to "Piotrek", user_path(2)%>
+        </div>
         <div class='about_button'>about</div>
     </div>
 </div>

@@ -1,8 +1,9 @@
 BlogYT::Application.routes.draw do
 root :to =>'posts#index'
-  devise_for :users
+devise_for :users, :path_prefix => 'd'
+resources :users, :only => [:show]
+ 
 
-  resources :users
 
  
 
