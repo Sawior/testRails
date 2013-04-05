@@ -73,7 +73,7 @@
         <!-- what news -->
         <div class='new-articles'>
         	<div class="text_title">News</div>
-            Tu będą posty jak się uda naprawić błąd....
+            <%= yield :listaPostow %>
         </div>
     	<!-- shoutbox -->
 		<div class="shoutbox">
@@ -84,6 +84,7 @@
 			Vi: Lubię PDFy <br />
 			Vi: Lubię PDFy <br />
 			</div>
+		<% if user_signed_in? %>
 		<div class='login'>
 			<% if user_signed_in? %>
 				<div class='text_title'>Panel admina</div>
@@ -92,8 +93,8 @@
     		<% else %>
     			<%= yield :sidebar %>
     		<% end %>
-    		
     	</div>
+    	<% end %>
     </div>
 
 <!-- main ncontainer -->
