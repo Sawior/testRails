@@ -14,7 +14,8 @@ resources :users, :only => [:show]
   resources :posts do
     resources :comments
   end
-  
+
+  resources :shouts
  
 
   # The priority is based upon order of creation:

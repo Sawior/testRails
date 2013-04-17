@@ -79,17 +79,15 @@
 		<div class="shoutbox">
         	<div class="text_title">ShoutBox</div>
         <br />
-			Vi: Lubię PDFy <br />
-			Vi: Lubię PDFy <br />
-			Vi: Lubię PDFy <br />
-			Vi: Lubię PDFy <br />
+			<%= yield :listaShout %>
 			</div>
 		<% if user_signed_in? %>
 		<div class='login'>
 			<% if user_signed_in? %>
 				<div class='text_title'>Panel admina</div>
-    			<%= yield :nowyPost %>
+    			
     			<%= link_to "Nowy post", new_post_path %>
+    			<%= link_to "Nowy spam", new_shout_path %>
     		<% else %>
     			<%= yield :sidebar %>
     		<% end %>

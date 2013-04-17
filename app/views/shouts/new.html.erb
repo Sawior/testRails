@@ -1,0 +1,19 @@
+<div id="dialog">
+	<div class='post2'>
+<%= form_for :shout, :url => {:action => :create} do |f| %>
+
+  <h2>Shout!</h2>
+
+  <div class="fname">
+  	<%= f.hidden_field :user_id, :value => current_user.id %>
+    <label for="name"><p>Name:</p></label>
+    <%= f.text_field :name, :size => 20 %>
+  </div>
+
+  <%= f.text_area :message, :rows => 5, :cols => 40 %>
+
+  <p><%= submit_tag 'Submit' %></p>
+
+<% end %>
+</div>
+</div>

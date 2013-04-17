@@ -1,0 +1,7 @@
+<% content_for :listaShout do %>
+	<% for shout in @shouts %>
+		<div>
+      		<p><%= shout.name %>: <%= shout.message %></p>
+    	</div>
+	<% end %>
+<% end %>
