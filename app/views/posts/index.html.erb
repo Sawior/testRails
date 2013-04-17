@@ -1,7 +1,7 @@
 <h1 align="middle"> Nasze projekty</h1>
 
 <% @posts.each do |post| %>
-	<div class='post'>
+	<div class='post' style='position: absolute; left: <%= post.x %>px; top: <%= post.y %>px'>
 		<div class='text_title'>
 			<%= link_to post.title, post %>
 			</div>
