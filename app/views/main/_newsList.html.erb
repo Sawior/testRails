@@ -1,0 +1,7 @@
+<% if defined?(@posts2)%>
+	<% @posts2.each do |post| %>
+		<div>
+		<%= link_to post.title, post %>
+		</div>
+	<% end %>
+<% end %>

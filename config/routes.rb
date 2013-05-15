@@ -1,5 +1,5 @@
 BlogYT::Application.routes.draw do
-root :to =>'posts#index'
+root :controller => 'main', :action => :index
 devise_for :users, :path_prefix => 'd'
 resources :users, :only => [:show]
  
@@ -16,7 +16,6 @@ resources :users, :only => [:show]
   end
 
   resources :shouts
-  
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
@@ -24,8 +23,6 @@ resources :users, :only => [:show]
   resources :movies do
     resources :reviews
   end
-  root to: 'movies#index'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
