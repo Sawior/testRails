@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
@@ -22,10 +21,9 @@ group :assets do
 end
 
 gem 'tinymce-rails'
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
+gem 'omniauth-facebook'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
