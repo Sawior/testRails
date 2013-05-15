@@ -2,23 +2,21 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-  if params[:tag].present? 
-    @posts = Post.tagged_with(params[:tag])
-  else 
+    @shouts = Shout.all_shouts
+    @posts2 = Post.post_list
     @posts = Post.all
-  end  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
       format.atom
     end
   end
-def tagged
- 
-end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @shouts = Shout.all_shouts
+    @posts2 = Post.post_list
     @post = Post.find(params[:id])
 
     respond_to do |format|
@@ -30,6 +28,8 @@ end
   # GET /posts/new
   # GET /posts/new.json
   def new
+    @shouts = Shout.all_shouts
+   @posts2 = Post.post_list
     @post = Post.new
 
     respond_to do |format|
@@ -40,6 +40,8 @@ end
 
   # GET /posts/1/edit
   def edit
+    @shouts = Shout.all_shouts
+    @posts2 = Post.post_list
     @post = Post.find(params[:id])
   end
 
@@ -48,6 +50,8 @@ end
   def create
     # druga wersja http://stackoverflow.com/questions/4350499/adding-variable-to-params-in-rails
     # @post= Post.new(params[:page].merge(:user_id => 1, :foo => "bar"))
+    @shouts = Shout.all_shouts
+   @posts2 = Post.post_list
     @post = Post.new(params[:post])
 
     respond_to do |format|
@@ -64,6 +68,8 @@ end
   # PUT /posts/1
   # PUT /posts/1.json
   def update
+    @shouts = Shout.all_shouts
+    @posts2 = Post.post_list
     @post = Post.find(params[:id])
 
     respond_to do |format|
@@ -80,6 +86,8 @@ end
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    @shouts = Shout.all_shouts
+    @posts2 = Post.post_list
     @post = Post.find(params[:id])
     @post.destroy
 

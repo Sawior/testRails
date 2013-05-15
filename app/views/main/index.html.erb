@@ -1,8 +1,7 @@
+<h1 align="middle"> Nasze projekty</h1>
 
-<h1 align="middle"> Wpisy<br /> <%= @user.email %></h1>
-
-<% @user.posts.each do |post| %>
-	<div class='post'>
+<% @posts.each do |post| %>
+	<div class='post' style='position: absolute; left: <%= post.x %>px; top: <%= post.y %>px'>
 		<div class='text_title'>
 			<%= link_to post.title, post %>
 			</div>
@@ -14,6 +13,3 @@
 		</div>	
 	</div>
 <% end %>
-
-	
-	

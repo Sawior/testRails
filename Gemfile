@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
@@ -8,7 +7,8 @@ gem 'rails', '3.2.12'
 gem 'sqlite3'
 gem 'devise'
 gem 'carrierwave'
-gem 'acts-as-taggable-on', '~> 2.3.1'# Gems used only for assets and not required
+
+# Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -21,10 +21,9 @@ group :assets do
 end
 
 gem 'tinymce-rails'
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
+gem 'omniauth-facebook'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -34,8 +34,10 @@
     	<% if user_signed_in? %>
   			Zalogowany jako <%= current_user.email %>. To nie Ty?
 			<%= link_to "Wyloguj", destroy_user_session_path  , :method =>:delete %> 
+			 <%= link_to "Sign out", signout_path, id: "sign_out" %>
 		<% else %>
 			<%= link_to "Zarejestruj", new_user_registration_path %> lub <%=link_to "Zaloguj", new_user_session_path %>
+			
 		<% end %>
    </div>
     
@@ -50,8 +52,7 @@
 <div class="title">
 	<!-- real title -->
     <div class='site_name'>
-  <%= link_to "Strona szalonego zespołu projektowego", tag_path("Tak")%>
-
+    Strona szalonego zespołu projektowego
     </div>
 
 	<!-- menu -->
@@ -74,13 +75,12 @@
         <!-- what news -->
         <div class='new-articles'>
         	<div class="text_title">News</div>
-            <%= yield :listaPostow %>
+            <%= render "main/newsList" %>
         </div>
     	<!-- shoutbox -->
 		<div class="shoutbox">
         	<div class="text_title">ShoutBox</div>
-        <br />
-			<%= yield :listaShout %>
+        		<%= render "main/index" %>
 			</div>
 		<% if user_signed_in? %>
 		<div class='login'>
