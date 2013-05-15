@@ -1,4 +1,7 @@
 class Guest < ActiveRecord::Base
+    attr_accessible :name
+     has_many :comments
+  
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |guest|
       guest.provider = auth.provider
