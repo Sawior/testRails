@@ -1,9 +1,9 @@
 BlogYT::Application.routes.draw do
-root :controller => 'main', :action => :index
+root :to =>'posts#index'
 devise_for :users, :path_prefix => 'd'
 resources :users, :only => [:show]
  
-
+ get 'tags/:tag', to: 'posts#index', as: :tag
 
  
 
@@ -16,13 +16,8 @@ resources :users, :only => [:show]
   end
 
   resources :shouts
-  match 'auth/:provider/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
-  match 'signout', to: 'sessions#destroy', as: 'signout'
-  
-  resources :movies do
-    resources :reviews
-  end
+ 
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

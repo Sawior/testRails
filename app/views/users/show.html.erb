@@ -2,6 +2,7 @@
 <h1 align="middle"> Wpisy<br /> <%= @user.email %></h1>
 
 <% @user.posts.each do |post| %>
+
 	<div class='post'>
 		<div class='text_title'>
 			<%= link_to post.title, post %>

@@ -4,7 +4,7 @@ class Shout < ActiveRecord::Base
   validates_length_of   :name,  :within => 1..255
   
   def self.all_shouts
-    Shout.find(:all, :limit => 5, :order => 'id DESC')
+    Shout.find(:all, :limit => 10, :order => 'id DESC')
   end
   
 end
